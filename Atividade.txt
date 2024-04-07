@@ -1,0 +1,429 @@
+exercício 1
+
+algoritmo calcularMedia
+var
+    nota1, nota2, nota3, media: real
+
+inicio
+    // Recebendo as três notas do aluno como entrada
+    escreva("Digite as três notas do aluno separadas por espaço: ")
+    leia(nota1, nota2, nota3)
+
+    // Calculando a média aritmética das notas
+    media <- (nota1 + nota2 + nota3) / 3
+
+    // Imprimindo a média com duas casas decimais
+    escreva("MEDIA = ", media:0:2)
+
+    // Verificando se o aluno foi aprovado ou reprovado e imprimindo a mensagem correspondente
+    se media >= 6 então
+        escreva("\nAPROVADO")
+    senao
+        escreva("\nREPROVADO")
+    fimse
+fimalgoritmo
+
+exercício 2 
+
+algoritmo rendaTotalDoJogo
+var
+    casosTeste, totalPublico, populares, gerais, arquibancada, cadeiras: inteiro
+    rendaTotal: real
+
+inicio
+    // Recebe o número de casos de teste
+    escreva("Digite o número de casos de teste: ")
+    leia(casosTeste)
+
+    // Para cada caso de teste
+    para i de 1 ate casosTeste faca
+        // Recebe os valores para o caso de teste atual
+        escreva("Digite o total de público, populares, gerais, arquibancada e cadeiras (separados por espaço) para o caso de teste ", i, ": ")
+        leia(totalPublico, populares, gerais, arquibancada, cadeiras)
+
+        // Calcula a renda total para o caso de teste atual
+        rendaTotal <- (populares * 1.00) + (gerais * 5.00) + (arquibancada * 10.00) + (cadeiras * 20.00)
+
+        // Exibe a renda total para o caso de teste atual
+        escreva("A RENDA DO JOGO N.", i, " E = ", rendaTotal:0:2)
+        escreval()
+    fimpara
+fimalgoritmo
+
+exercício 3 
+
+algoritmo CalculoCustoAgua
+var
+    salario_minimo, consumo_kW, custo_por_kW, custo_consumo, custo_desconto: real
+
+inicio
+    escreva("Digite o valor do salário mínimo: R$ ")
+    leia(salario_minimo)
+    escreva("Digite a quantidade de kW consumida pela residência: ")
+    leia(consumo_kW)
+
+    custo_por_kW <- (salario_minimo * 0.7) / 100
+    custo_consumo <- custo_por_kW * consumo_kW
+    custo_desconto <- custo_consumo * 0.9
+
+    escreva("Custo por kW: R$ ", custo_por_kW:0:2, "\n")
+    escreva("Custo do consumo: R$ ", custo_consumo:0:2, "\n")
+    escreva("Custo com desconto: R$ ", custo_desconto:0:2, "\n")
+fimalgoritmo
+
+
+exercício 4
+
+
+algoritmo CalculoContaAgua
+var
+    conta_cliente: inteiro
+    consumo_agua, valor_conta: real
+    tipo_consumidor: caractere
+
+inicio
+    // Ler os dados do cliente
+    leia(conta_cliente, consumo_agua, tipo_consumidor)
+
+    // Calcular o valor da conta de acordo com o tipo de consumidor
+    escolha tipo_consumidor
+        caso 'R'
+            valor_conta <- 5.0 + (0.05 * consumo_agua)
+        caso 'C'
+            se consumo_agua <= 80 entao
+                valor_conta <- 500.0
+            senao
+                valor_conta <- 500.0 + (0.25 * (consumo_agua - 80))
+            fimse
+        caso 'I'
+            se consumo_agua <= 100 entao
+                valor_conta <- 800.0
+            senao
+                valor_conta <- 800.0 + (0.04 * (consumo_agua - 100))
+            fimse
+        senao
+            escreva("Tipo de consumidor inválido!")
+            retorne 1
+    fimescolha
+
+    // Imprimir os resultados
+    escreva("CONTA = ", conta_cliente)
+    escreva("\nVALOR DA CONTA = ", valor_conta:0:2)
+fimalgoritmo
+
+exercício 6
+
+algoritmo ConversaoFahrenheitCelsius
+var
+    n, i: inteiro
+    temperatura_F, temperatura_C: real
+
+inicio
+    leia(n)
+
+    para i de 1 ate n faca
+        leia(temperatura_F)
+        temperatura_C <- 5 * (temperatura_F - 32) / 9
+        escreva(temperatura_F:0:2, " FAHRENHEIT EQUIVALE A ", temperatura_C:0:2, " CELSIUS\n")
+    fimpara
+fimalgoritmo
+
+exercício 7
+
+algoritmo ConversaoMetrica
+var
+    temperatura_F, temperatura_C, quantidade_polegadas, quantidade_mm: real
+
+inicio
+    leia(temperatura_F)
+    leia(quantidade_polegadas)
+
+    temperatura_C <- (5 * temperatura_F - 160) / 9
+    quantidade_mm <- quantidade_polegadas * 25.4
+
+    escreva("O VALOR EM CELSIUS = ", temperatura_C:0.2f, "\n")
+    escreva("A QUANTIDADE DE CHUVA E = ", quantidade_mm:0.2f, "\n")
+fimalgoritmo
+
+exercício 8
+
+algoritmo CalculoCustoLata
+var
+    raio, altura, area_circulo, area_lateral, custo_total: real
+    pi: real
+
+inicio
+    // Definir o valor de pi
+    pi <- 3.14159
+
+    // Ler os valores do raio e altura da lata
+    leia(raio)
+    leia(altura)
+
+    // Calcular a área do círculo
+    area_circulo <- pi * raio * raio
+
+    // Calcular a área lateral do cilindro
+    area_lateral <- 2 * pi * raio * altura
+
+    // Calcular o custo total da lata
+    custo_total <- 100.0 * (area_circulo + area_lateral)
+
+    // Imprimir o resultado
+    escreva("O VALOR DO CUSTO E = ", custo_total:0:2, "\n")
+fimalgoritmo
+
+exercício 9
+
+algoritmo CalculoDiscriminante
+var
+    A, B, C, delta: real
+
+inicio
+    // Ler os valores dos coeficientes A, B e C
+    leia(A)
+    leia(B)
+    leia(C)
+
+    // Calcular o discriminante
+    delta <- B * B - 4 * A * C
+
+    // Imprimir o valor do discriminante
+    escreva("O VALOR DE DELTA E = ", delta:0.2f, "\n")
+fimalgoritmo
+
+exercício 10
+
+algoritmo CalculoDeterminante
+var
+    a, b, c, d, determinante: real
+
+inicio
+    // Ler os elementos da matriz
+    leia(a)
+    leia(b)
+    leia(c)
+    leia(d)
+
+    // Calcular o determinante
+    determinante <- a * d - b * c
+
+    // Imprimir o valor do determinante
+    escreva("O VALOR DO DETERMINANTE E = ", determinante:0.2f, "\n")
+fimalgoritmo
+
+exercício 11
+
+algoritmo VerificaDivisibilidade
+var
+    numero: inteiro
+
+inicio
+    // Ler o número inteiro da entrada
+    leia(numero)
+
+    // Verificar se o número é divisível por três e cinco
+    se numero mod 3 = 0 e numero mod 5 = 0 entao
+        escreva("O NUMERO E DIVISIVEL\n")
+    senao
+        escreva("O NUMERO NAO E DIVISIVEL\n")
+    fimse
+fimalgoritmo
+
+exercício 12
+
+Uma locadora de charretes cobra R$ 10,00 de taxa para cada 3 horas de uso de uma charrete e R$5,00
+para cada 1 hora abaixo dessas 3 horas. Fazer um programa que leia a quantidade de horas que a charrete
+foi usada e que calcule e escreva quanto o cliente tem de pagar.
+Entrada
+O programa deve ler uma única linha na entrada, contendo o número de horas que o locatário utilizou a
+charrete.
+Saída
+O programa deve imprimir uma linha contendo a frase: O VALOR A PAGAR E = X, onde X é o valor
+do aluguel e deve conter no máximo 2 casas decimais. Após o valor do aluguel o programa deve imprimir
+um caractere de quebra de linha: ‘\n’.
+
+exercício 13
+
+algoritmo ConversaoNotaConceito
+var
+    nota: real
+    conceito: caractere
+
+inicio
+    // Ler a nota da entrada
+    leia(nota)
+
+    // Determinar o conceito correspondente
+    se nota >= 9.0 entao
+        conceito <- 'A'
+    senao
+        se nota >= 7.5 entao
+            conceito <- 'B'
+        senao
+            se nota >= 6.0 entao
+                conceito <- 'C'
+            senao
+                conceito <- 'D'
+            fimse
+        fimse
+    fimse
+
+    // Imprimir o resultado
+    escreva("NOTA = ", nota:0.1f, " CONCEITO = ", conceito, "\n")
+fimalgoritmo
+
+exercício 14
+
+algoritmo CalculoVolumePiramide
+var
+    altura, aresta, area_base, volume: real
+
+inicio
+    // Ler a altura da pirâmide e o comprimento da aresta do hexágono
+    leia(altura, aresta)
+
+    // Calcular a área da base do hexágono
+    area_base <- (3 * aresta * aresta * sqrt(3)) / 2
+
+    // Calcular o volume da pirâmide
+    volume <- (1.0 / 3.0) * area_base * altura
+
+    // Imprimir o resultado
+    escreva("O VOLUME DA PIRAMIDE E = ", volume:0.2f, " METROS CUBICOS\n")
+fimalgoritmo
+
+exercício 15
+
+algoritmo QuadradoNumerosPares
+var
+    N, i: inteiro
+
+inicio
+    // Ler o valor de N
+    leia(N)
+
+    // Gerar o quadrado de cada número par de 1 até N
+    para i de 2 ate N passo 2 faca
+        escreva(i, "^2 = ", i * i, "\n")
+    fimpara
+fimalgoritmo
+
+exercício 16
+
+algoritmo ReajusteSalario
+var
+    salario, salario_reajustado: real
+
+inicio
+    // Ler o salário do funcionário
+    leia(salario)
+
+    // Verificar o tipo de reajuste de acordo com o salário
+    se salario <= 300.0 entao
+        salario_reajustado <- salario * 1.5
+    senao
+        salario_reajustado <- salario * 1.3
+    fimse
+
+    // Imprimir o salário reajustado
+    escreva("SALARIO COM REAJUSTE = ", salario_reajustado:0.2f, "\n")
+fimalgoritmo
+
+exercício 17
+
+algoritmo SequenciaNumerosPares
+var
+    x, y, i: inteiro
+
+inicio
+    // Ler os números x e y
+    leia(x, y)
+
+    // Verificar se x é par
+    se x mod 2 = 0 entao
+        // Imprimir a sequência de números pares a partir de x
+        para i de 0 ate y - 1 faca
+            escreva(x + i * 2, " ")
+        fimpara
+        escreva("\n")
+    senao
+        // Imprimir a mensagem de erro
+        escreva("O PRIMEIRO NUMERO NAO E PAR\n")
+    fimse
+fimalgoritmo
+
+
+exercício 18
+
+algoritmo SomaProgressaoAritmetica
+var
+    a1, r, n, soma: inteiro
+    termo_atual: inteiro
+
+inicio
+    // Ler os valores iniciais da progressão aritmética e o número de elementos
+    leia(a1, r, n)
+
+    // Inicializar a soma
+    soma <- 0
+
+    // Calcular a soma dos n primeiros termos da progressão aritmética
+    para termo_atual de a1 ate a1 + (n - 1) * r passo r faca
+        soma <- soma + termo_atual
+    fimpara
+
+    // Imprimir o resultado
+    escreva(soma, "\n")
+fimalgoritmo
+
+exercício 19
+
+algoritmo SomaSerie
+var
+    n: inteiro
+    S, k: real
+
+inicio
+    // Ler o valor de n
+    leia(n)
+
+    // Verificar se n é um número válido
+    se n <= 1 entao
+        escreva("Numero invalido!\n")
+    senao
+        // Inicializar a variável de soma
+        S <- 0.0
+
+        // Calcular a soma da série
+        para k de 1 ate n faca
+            S <- S + 1.0 / k
+        fimpara
+
+        // Imprimir o resultado com 6 casas decimais
+        escreva(S:0.6f, "\n")
+    fimse
+fimalgoritmo
+
+exercício 20
+
+algoritmo ConverteTempoParaSegundos
+var
+    horas, minutos, segundos, tempo_em_segundos: inteiro
+
+inicio
+    // Ler o valor do tempo em horas, minutos e segundos
+    leia(horas)
+    leia(minutos)
+    leia(segundos)
+
+    // Calcular o tempo total em segundos
+    tempo_em_segundos <- horas * 3600 + minutos * 60 + segundos
+
+    // Imprimir o resultado
+    escreva("O TEMPO EM SEGUNDOS E = ", tempo_em_segundos, "\n")
+fimalgoritmo
+
+
+
+
