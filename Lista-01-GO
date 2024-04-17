@@ -1,0 +1,54 @@
+// Exercicio 01
+
+package main 
+import "fmt"
+
+func main(){
+    
+    var (x, y, z float64)
+    
+    fmt.Println("Informe as 3 notas: ")
+    fmt.Scan(&x, &y, &z)
+    
+    fmt.Printf("MEDIA = %.2f \n", (z+x+y)/3)
+    
+    if (z+x+y)/3 < 6{
+        fmt.Print("REPROVADO")
+    }else{
+        fmt.Print("APROVADO")
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+//Exercicio 02
+
+package main 
+import "fmt"
+
+func main(){
+    var c int
+    var total float64
+    var popular, geral, arquibancada, cadeiras, y float64
+    
+    fmt.Printf("Digite o número de jogos a ser analisado: ")
+    fmt.Scan(&c)
+    
+    for i:=0; i<c; i++{
+        
+        fmt.Scan(&total)
+        fmt.Scan(&popular)
+        fmt.Scan(&geral)
+        fmt.Scan(&arquibancada)
+        fmt.Scan(&cadeiras)
+        
+    y = ((total/100.00*popular)+(total/100.00*geral*5.00)+(total/100.00*10.00*arquibancada)+(total/100.00*cadeiras*20.00))
+        
+        fmt.Printf("A RENDA DO JOGO N.%d E = %.2f", i+1, y)
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------
