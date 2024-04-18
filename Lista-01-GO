@@ -395,7 +395,24 @@ func main() {
 
 //Exercicio 17
 
+package main
 
+import "fmt"
+
+func main() {
+	var x, y int
+	fmt.Scanln(&x, &y)
+
+	if x%2 == 0 {
+		for i := 0; i < y; i++ {
+			fmt.Printf("%d ", x)
+			x += 2
+		}
+		fmt.Println()
+	} else {
+		fmt.Println("O PRIMEIRO NUMERO NAO E PAR")
+	}
+}
 
 
 -----------------------------------------------------------------------------------------------------
@@ -403,14 +420,79 @@ func main() {
 
 //Exercicio 18
 
+package main
+
+import "fmt"
+
+func main() {
+    var a1, r, n int
+    fmt.Scanln(&a1, &r, &n)
+
+    soma := calcularSomaProgressao(a1, r, n)
+    fmt.Println(soma)
+}
+
+func calcularSomaProgressao(a1, r, n int) int {
+    soma := 0
+    for i := 0; i < n; i++ {
+        soma += a1 + i*r
+    }
+    return soma
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
 
 //Exercicio 19
 
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n int
+	fmt.Scanln(&n)
+
+	if n <= 1 {
+		fmt.Println("Numero invalido!")
+		return
+	}
+
+	soma := calcularSoma(n)
+	fmt.Printf("%.6f\n", soma)
+}
+
+func calcularSoma(n int) float64 {
+	soma := 0.0
+	for k := 1; k <= n; k++ {
+		soma += 1.0 / float64(k)
+	}
+	return soma
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
 
 //Exercicio 20
+
+package main
+
+import "fmt"
+
+func main() {
+    var horas, minutos, segundos int
+    fmt.Scanln(&horas)
+    fmt.Scanln(&minutos)
+    fmt.Scanln(&segundos)
+
+    tempoEmSegundos := converterParaSegundos(horas, minutos, segundos)
+    fmt.Printf("O TEMPO EM SEGUNDOS E = %d\n", tempoEmSegundos)
+}
+
+func converterParaSegundos(horas, minutos, segundos int) int {
+    return horas*3600 + minutos*60 + segundos
+}
