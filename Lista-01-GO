@@ -163,11 +163,50 @@ func main() {
 
 //Exercicio 07
 
+package main
+
+import "fmt"
+
+func main() {
+    var fahrenheit, polegadas float64
+    fmt.Scanln(&fahrenheit)
+    fmt.Scanln(&polegadas)
+
+    celsius := (5*fahrenheit - 160) / 9
+    milimetros := polegadas * 25.4
+
+    fmt.Printf("O VALOR EM CELSIUS = %.2f\n", celsius)
+    fmt.Printf("A QUANTIDADE DE CHUVA E = %.2f\n", milimetros)
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
 
 //Exercicio 08
+
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	const precoAluminio = 100.0 // Preço do alumínio por m²
+
+	var raio, altura float64
+	fmt.Scanln(&raio)
+	fmt.Scanln(&altura)
+
+	areaCirculo := math.Pi * raio * raio
+	areaLateral := 2 * math.Pi * raio * altura
+
+	areaTotal := 2*areaCirculo + areaLateral
+	custo := precoAluminio * areaTotal
+
+	fmt.Printf("O VALOR DO CUSTO E = %.2f\n", custo)
+}
 
 
 -----------------------------------------------------------------------------------------------------
@@ -175,17 +214,61 @@ func main() {
 
 //Exercicio 09
 
+package main
+
+import "fmt"
+
+func main() {
+	var A, B, C float64
+	fmt.Scanln(&A)
+	fmt.Scanln(&B)
+	fmt.Scanln(&C)
+
+	delta := B*B - 4*A*C
+	fmt.Printf("O VALOR DE DELTA E = %.2f\n", delta)
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
 
 //Exercicio 10
 
+package main
+
+import "fmt"
+
+func main() {
+	var a, b, c, d float64
+	fmt.Scanln(&a)
+	fmt.Scanln(&b)
+	fmt.Scanln(&c)
+	fmt.Scanln(&d)
+
+	determinante := a*d - b*c
+	fmt.Printf("O VALOR DO DETERMINANTE E = %.2f\n", determinante)
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
 
 //Exercicio 11
+
+package main
+
+import "fmt"
+
+func main() {
+	var numero int
+	fmt.Scanln(&numero)
+
+	if numero%3 == 0 && numero%5 == 0 {
+		fmt.Println("O NUMERO E DIVISIVEL")
+	} else {
+		fmt.Println("O NUMERO NAO E DIVISIVEL")
+	}
+}
 
 
 -----------------------------------------------------------------------------------------------------
