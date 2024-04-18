@@ -56,6 +56,22 @@ func main(){
 
 //Exercicio 03
 
+package main
+import "fmt"
+
+func main (){
+    var n1, n2, n3 int
+    
+    fmt.Scan(&n1, &n2, &n3)
+    
+    if n1<0 || n1>9 || n2<0 || n2>9 || n3<0 || n3>9{
+        fmt.Print("DIGITO INVALIDO")
+    }else{
+    fmt.Printf("%d%d%d", n1, n2, n3)
+    fmt.Print(", ",(n1*100+n2*10+n3)*(n1*100+n2*10+n3))
+    }
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
@@ -67,6 +83,38 @@ func main(){
 
 
 //Exercicio 05
+
+package main
+import "fmt"
+
+func main(){
+    var(
+        conta int
+        consumo float64
+        tipodeconta rune
+        )
+        
+        fmt.Scanf("%d %f %c", &conta, &consumo, &tipodeconta)
+        switch tipodeconta{
+            case 'R':
+                fmt.Print("CONTA = %d /N VALOR DA CONTA = %.2f", conta, 5+0.05*consumo)
+                break
+            case 'C':
+                if consumo <=80{
+                    fmt.Printf("CONTA = %d \nVALOR DA CONTA = 80.00", conta)
+                }else{
+                    fmt.Printf("CONTA = %d \nVALOR DA CONTA = %.2f", conta, 500+0.25*(consumo-80))
+                }
+                break
+            case 'I':
+                if consumo <=100{
+                    fmt.Printf("CONTA = %d \nVALOR DA CONTA = 800.00", conta)
+                }else{
+                    fmt.Printf("CONTA = %d \nVALOR DA CONTA = %.2f", conta, (consumo-100)*0.04+800)
+                }
+                break
+        }
+}
 
 
 -----------------------------------------------------------------------------------------------------
