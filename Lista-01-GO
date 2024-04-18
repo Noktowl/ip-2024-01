@@ -78,6 +78,25 @@ func main (){
 
 //Exercicio 04
 
+package main
+
+import "fmt"
+
+func main() {
+    var salarioMinimo, consumoKW float64
+
+    fmt.Scanln(&salarioMinimo)
+    fmt.Scanln(&consumoKW)
+
+    valorPorKW := 0.7 * salarioMinimo / 100
+    custoDoConsumo := valorPorKW * consumoKW
+    custoComDesconto := custoDoConsumo * 0.9
+
+    fmt.Printf("Custo por kW: R$ %.2f\n", valorPorKW)
+    fmt.Printf("Custo do consumo: R$ %.2f\n", custoDoConsumo)
+    fmt.Printf("Custo com desconto: R$ %.2f\n", custoComDesconto)
+}
+
 
 -----------------------------------------------------------------------------------------------------
 
@@ -121,6 +140,22 @@ func main(){
 
 
 //Exercicio 06
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+    fmt.Scanln(&n)
+
+    for i := 0; i < n; i++ {
+        var fahrenheit float64
+        fmt.Scanln(&fahrenheit)
+        celsius := (5 * (fahrenheit - 32)) / 9
+        fmt.Printf("%.2f FAHRENHEIT EQUIVALE A %.2f CELSIUS\n", fahrenheit, celsius)
+    }
+}
 
 
 -----------------------------------------------------------------------------------------------------
