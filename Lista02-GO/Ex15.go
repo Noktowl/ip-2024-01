@@ -17,11 +17,11 @@ func main() {
 
         if A > B {
             
-            fmt.Printf("%03d\n", A)
+            fmt.Printf("%d\n", A)
             
         } else {
             
-            fmt.Printf("%03d\n", B)
+            fmt.Printf("%d\n", B)
             
         }
         
