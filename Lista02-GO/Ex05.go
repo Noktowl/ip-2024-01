@@ -1,5 +1,3 @@
-//Exercicio 03
-
 package main
 
 import "fmt"
