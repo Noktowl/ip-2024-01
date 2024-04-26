@@ -22,8 +22,9 @@ func main() {
             
         }
         
-        fmt.Printf("r: %.9f, erro: %.9f\n", raiz, erro)
-        
+        if erro != 1 {
+            fmt.Printf("r: %.9f, erro: %.9f\n", raiz, erro)
+        }
     }
     
 }
